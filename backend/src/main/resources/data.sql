@@ -1,5 +1,8 @@
 INSERT INTO tb_user (name, email, password) VALUES ('Bob Brown', 'bob@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
 INSERT INTO tb_user (name, email, password) VALUES ('Ana Paula', 'ana@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
+INSERT INTO tb_user (name, email, password) VALUES ('Vitor Lucas', 'vitor@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
+INSERT INTO tb_user (name, email, password) VALUES ('Luisa Sampaio', 'luisa@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
+
 
 INSERT INTO tb_role (authority) VALUES ('ROLE_VISITOR');
 INSERT INTO tb_role (authority) VALUES ('ROLE_MEMBER');
@@ -8,6 +11,10 @@ INSERT INTO tb_role (authority) VALUES ('ROLE_MEMBER');
 INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 2);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (4, 1);
+
 
 INSERT INTO tb_genre (name) VALUES ('Ação');
 INSERT INTO tb_genre (name) VALUES ('Aventura');
@@ -28,3 +35,27 @@ INSERT INTO tb_movie (title, sub_title, year, img_url, synopsis, genre_id) VALUE
 INSERT INTO tb_movie (title, sub_title, year, img_url, synopsis, genre_id) VALUES ('Mulher-Maravilha 1984', 'Uma nova era de maravilhas começa.', 2020, 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/srYya1ZlI97Au4jUYAktDe3avyA.jpg', 'Em 1984, Diana Prince entra em conflito com dois inimigos formidáveis, Maxwell Lord e a Mulher-Leopardo, enquanto reencontra misteriosamente com seu antigo interesse amoroso Steve Trevor.', 2);
 INSERT INTO tb_movie (title, sub_title, year, img_url, synopsis, genre_id) VALUES ('Tenet', 'O tempo acaba.', 2020, 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/wzJRB4MKi3yK138bJyuL9nx47y6.jpg', 'Armado com apenas uma palavra – Tenet – e lutando pela sobrevivência do mundo inteiro, o Protagonista viaja através de um mundo crepuscular de espionagem internacional em uma missão que irá desenrolar em algo para além do tempo real.', 1);
 INSERT INTO tb_movie (title, sub_title, year, img_url, synopsis, genre_id) VALUES ('American Pie Apresenta', 'Meninas ao Ataque', 2020, 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/dHFskXdLIjbuFLttyD46CgLc6o5.jpg', 'Um grupo de mulheres decide aproveitar seu poder feminino e se unir para conseguir o que querem no último ano do ensino médio.', 7);
+
+
+INSERT INTO tb_review (text, movie_id, user_id) values ('Esse filme é bom, só não gostei muito do final', 9, 2);
+INSERT INTO tb_review (text, movie_id, user_id) values ('Esse filme nunca perde a graça, já assiti varias vezes', 4, 2);
+INSERT INTO tb_review (text, movie_id, user_id) values ('Ri muito, super recomendo', 7, 2);
+INSERT INTO tb_review (text, movie_id, user_id) values ('Sou super fã dessa serie de filmes', 1, 2);
+INSERT INTO tb_review (text, movie_id, user_id) values ('Não gostei, achei sem graça', 10, 2);
+
+INSERT INTO tb_review (text, movie_id, user_id) values ('Até que é legal, dou nota 7', 10, 3);
+INSERT INTO tb_review (text, movie_id, user_id) values ('Achei muito legal, cheio de animações legais', 8, 3);
+INSERT INTO tb_review (text, movie_id, user_id) values ('Muito fera !!! super recomendo !!', 6, 3);
+INSERT INTO tb_review (text, movie_id, user_id) values ('Legal, esse filme me faz lembrar minha ex namorada ;(', 5, 3);
+INSERT INTO tb_review (text, movie_id, user_id) values ('Filme excelente, o enredo é muito bem elaborado', 3, 3);
+
+
+
+
+
+
+
+
+
+
+
