@@ -1,6 +1,10 @@
+import './styles.css';
+
 const Catalog = () =>(
-    <div>
-        <h1>Catalog</h1>
+    <div className='catalog-container'>
+        <div className='catalog-search'>
+
+        </div>
     </div>
 );
 

@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./core/components/Navbar";
 import Catalog from "./core/pages/Catalog";
-import Home from "./core/pages/Home";
+import Login from "./core/pages/Login";
 
 const Routes = () => (
     <BrowserRouter>
     <Navbar/>
         <Switch>
             <Route path='/' exact>
-                <Home/>
+                <Login/>
             </Route>
             <Route path='/catalog'>
                 <Catalog/>
