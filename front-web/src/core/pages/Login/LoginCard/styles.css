@@ -28,8 +28,10 @@ input{
     font-size: 18px;
     line-height: 25px;
     letter-spacing: -0.015em;
-    color: #9E9E9E;
+    
 }
+::-webkit-input-placeholder  { color: #9E9E9E; }
+
 .input-password{
     margin-bottom: 168px;
 }
