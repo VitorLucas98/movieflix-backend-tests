@@ -13,20 +13,20 @@ type FormData = {
 }
 
 const LoginCard = () => {
-    const { register, handleSubmit } = useForm<FormData>();
+    const { register, handleSubmit, errors } = useForm<FormData>();
     const [hasError, setHasError] = useState(false);
     const history = useHistory();
 
     const onSubmit = (data: FormData) => {
         makeLogin(data)
-        .then(response =>{
-            setHasError(false)
-            saveSessionData(response.data)
-            history.push('/catalog');
-        })
-        .catch(()=>{
-            setHasError(true);
-        })
+            .then(response => {
+                setHasError(false)
+                saveSessionData(response.data)
+                history.push('/catalog');
+            })
+            .catch(() => {
+                setHasError(true);
+            })
     };
     return (
         <div className='login-card-container'>
@@ -37,16 +37,37 @@ const LoginCard = () => {
                 </div>
             )}
             <form className='login-form' onSubmit={handleSubmit(onSubmit)}>
-                <input
-                    type="email"
-                    placeholder='Email'
-                    className='input-email'
-                    name="username" ref={register({required: true})} />
-                <input
-                    type="password"
-                    placeholder='Senha'
-                    className='input-password'
-                    name="password" ref={register({required: true})} />
+                <div className=''>
+                    <input
+                        type="email"
+                        placeholder='Email'
+                        className={`input-email ${errors.username ? 'is-invalid' : ''} `}
+                        name="username" 
+                        ref={register({
+                            required: "Campo obrigatório",
+                            pattern: {
+                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                              message: "Email inválido"
+                            }
+                          })} />
+                    {errors.username && (
+                        <div className="error-feedback">
+                            {errors.username.message}
+                        </div>
+                    )}
+                </div>
+                <div className=''>
+                    <input
+                        type="password"
+                        placeholder='Senha'
+                        className={`input-password ${errors.password ? 'is-invalid' : ''} `}
+                        name="password" ref={register({ required: "Campo obrigatório"})} />
+                    {errors.password && (
+                        <div className="error-feedback">
+                           {errors.password.message}
+                        </div>
+                    )}
+                </div>
                 <div className='button-content'>
                     <button className='button-icon'>
                         <h3 className='title-btn'>LOGAR</h3>
