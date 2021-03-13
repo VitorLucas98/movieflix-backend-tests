@@ -1,5 +1,5 @@
 .login-card-container{
-    padding: 95px 50px 180px 50px;
+    padding: 74px 44px 96px 50px;
     background: #6C6C6C;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -13,7 +13,7 @@
     text-align: center;
     letter-spacing: -0.015em;
     color: #FFFFFF;
-    margin-bottom: 70px;
+    margin-bottom: 55px;
 }
 input{
     margin-top: 32px;
@@ -22,7 +22,7 @@ input{
     box-sizing: border-box;
     border-radius: 10px;
     padding: 10px 20px 15px 20px;
-    width: 450px;
+    width: 385px;
     display: flex;
     font-size: 18px;
     line-height: 25px;
@@ -38,7 +38,7 @@ input:focus {
 
 .button-content{
     display: flex;
-    margin-top: 150px;
+    margin-top: 80px;
 }
 .title-btn{
     font-size: 24px;
@@ -51,7 +51,7 @@ input:focus {
 .button-icon{
     cursor: pointer;
     height: 70px;
-    width: 380px;
+    width: 310px;
     text-align: center;
     border: 1px solid transparent;
     background: #FFC700;

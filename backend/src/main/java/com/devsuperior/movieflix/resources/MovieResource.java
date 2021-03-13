@@ -30,7 +30,7 @@ public class MovieResource {
 	@GetMapping
 	public ResponseEntity<Page<MovieDTO>> findAllPaged(
 			@RequestParam(value = "genreId", defaultValue="0") Long genreId,
-			@RequestParam(value = "page", defaultValue ="") Integer page,
+			@RequestParam(value = "page", defaultValue ="0") Integer page,
 			@RequestParam(value = "linesPerPage", defaultValue = "12") Integer linesPerPage){
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage);
 		Page<MovieDTO> list = service.findAllPaged(genreId, pageRequest);
@@ -38,4 +38,5 @@ public class MovieResource {
 		return ResponseEntity.ok(list);
 		
 	}
+
 }

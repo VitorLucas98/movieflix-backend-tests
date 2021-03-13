@@ -8,12 +8,11 @@ const Navbar = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const location = useLocation();
 
-    useEffect(() =>{
+    useEffect(() => {
         setIsAuthenticated(auth());
     }, [location])
 
-    const handleSair = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        event.preventDefault();
+    const handleSair = () => {
         logout();
     }
 
@@ -23,11 +22,9 @@ const Navbar = () => {
                 MovieFlix
                 </a>
             {isAuthenticated && (
-                <a href="/" onClick={handleSair}>
-                    <div className='logout-btn'>
-                        SAIR
-                    </div>
-                </a>
+                <button className='logout-btn' onClick={handleSair}>
+                    SAIR
+                </button>
             )}
         </nav>
     );

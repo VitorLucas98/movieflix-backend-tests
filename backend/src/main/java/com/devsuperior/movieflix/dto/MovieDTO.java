@@ -4,8 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-
+import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.entities.Review;
 
@@ -17,8 +16,6 @@ public class MovieDTO implements Serializable{
 	private String subTitle;
 	private Integer year;
 	private String imgUrl;
-	
-	@Column(columnDefinition="TEXT")
 	private String synopsis;
 	private GenreDTO genre;
 	private List<ReviewDTO> reviews = new ArrayList<>();
@@ -26,14 +23,14 @@ public class MovieDTO implements Serializable{
 	public MovieDTO() {
 	}
 
-	public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis, GenreDTO genre) {
+	public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis, Genre genre) {
 		this.id = id;
 		this.title = title;
 		this.subTitle = subTitle;
 		this.year = year;
 		this.imgUrl = imgUrl;
 		this.synopsis = synopsis;
-		this.genre = genre;
+		this.genre = new GenreDTO(genre);
 	}
 	
 	public MovieDTO(Movie entity) {

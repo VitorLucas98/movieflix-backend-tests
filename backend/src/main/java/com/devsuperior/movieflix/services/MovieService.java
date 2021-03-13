@@ -37,4 +37,5 @@ public class MovieService {
 		Page <Movie> movies = repository.find(genre, pageable);
 		return movies.map(x -> new MovieDTO(x));
 	}
+	
 }

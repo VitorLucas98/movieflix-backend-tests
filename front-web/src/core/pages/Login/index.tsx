@@ -8,7 +8,7 @@ const Login = () => {
             <div className="login-info">
                 <h1 className='login-info-title'>Avalie Filmes</h1>
                 <p className='login-info-subtitle'>
-                    Faça parte do nosso catálogo de divulgação e<br /> aumente a venda dos seus produtos.
+                Diga o que você achou do seu filme favorito 
                 </p>
                 <div className='icon-container'>
                     <IconLogin />
