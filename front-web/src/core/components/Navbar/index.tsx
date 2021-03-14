@@ -18,7 +18,7 @@ const Navbar = () => {
 
     return (
         <nav className="main-nav">
-            <a href="/" className='nav-title'>
+            <a href="/" className='nav-title' onClick={handleSair}>
                 MovieFlix
                 </a>
             {isAuthenticated && (

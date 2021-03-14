@@ -22,7 +22,7 @@ const LoginCard = () => {
             .then(response => {
                 setHasError(false)
                 saveSessionData(response.data)
-                history.push('/catalog');
+                history.push('/movies');
             })
             .catch(() => {
                 setHasError(true);
