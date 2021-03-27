@@ -1,7 +1,6 @@
 .login-container{
     display: flex;
     padding: 42px 40px 134px 140px;
-    background-color: #525252;
     justify-content: center;
 }
 .login-info-title{
