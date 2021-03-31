@@ -17,7 +17,7 @@ const CatalogMovies = () => {
     const getMovies = useCallback(() => {
         const params = {
             page: activePage,
-            linesPerPage: 6,
+            linesPerPage: 10,
             genreId: genre?.id
         }
         makePrivateRequest({ url: '/movies', params })
@@ -58,7 +58,7 @@ const CatalogMovies = () => {
             </div>
             <div className="catalog-movies">
                 {movieResponse?.content.map(movie => (
-                    <Link to='/movies/1' key={movie.id}><MovieCard movie={movie} /></Link>
+                    <Link to={`/movies/${movie.id}`} key={movie.id}><MovieCard movie={movie} /></Link>
                 ))}
             </div>
             {movieResponse &&
