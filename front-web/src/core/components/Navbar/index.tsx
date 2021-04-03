@@ -23,7 +23,7 @@ const Navbar = () => {
                 </a>
             {isAuthenticated && (
                 <button className='logout-btn' onClick={handleSair}>
-                    SAIR
+                    <h5 className='logout-btn-title'>SAIR</h5>
                 </button>
             )}
         </nav>

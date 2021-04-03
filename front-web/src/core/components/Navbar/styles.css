@@ -16,21 +16,24 @@
 }
 .logout-btn{
     background-color: #FFC700;
+    position: absolute;
+    left: 87.99%;
+    right: 4.47%;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.logout-btn-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 87px;
+    height: 22px;
     font-size: 14px;
     line-height: 19px;
     text-align: center;
     letter-spacing: -0.015em;
     color: #000000;
-    font-weight: bold;
-    display: flex;
-    position: relative;
-    left: 1050px;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 10px;
-    padding: 4px 7px 4px 8px;
-    width: 88px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    padding: 4px 8px;
 }
