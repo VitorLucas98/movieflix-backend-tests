@@ -60,6 +60,9 @@ input:focus {
     color: #000000;
     text-transform: uppercase;
 }
+.button-icon:focus{
+    outline-style: none;
+  }
 .button-arrow{
     width: 70px;
     display: flex;

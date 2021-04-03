@@ -6,6 +6,7 @@ import { makePrivateRequest } from '../../../../utils/request';
 import MovieCard from '../MovieCard';
 import Select from 'react-select';
 import './styles.css';
+import MovieCardLoader from '../MovieCardLoader';
 
 const CatalogMovies = () => {
     const [movieResponse, setMovieResponse] = useState<MovieResponse>();
@@ -13,6 +14,7 @@ const CatalogMovies = () => {
     const [genres, setGenres] = useState<Genre[]>([]);
     const [isLoadingGenres, setIsLoadingGenres] = useState(false);
     const [genre, setGenre] = useState<Genre>();
+    const [isLoading, setIsLoading] = useState(false);
 
     const getMovies = useCallback(() => {
         const params = {
@@ -20,8 +22,10 @@ const CatalogMovies = () => {
             linesPerPage: 10,
             genreId: genre?.id
         }
+        setIsLoading(true)
         makePrivateRequest({ url: '/movies', params })
-            .then(response => setMovieResponse(response.data));
+            .then(response => setMovieResponse(response.data))
+            .finally(() => setIsLoading(false));
     }, [activePage, genre]);
     useEffect(() => {
         getMovies()
@@ -32,7 +36,6 @@ const CatalogMovies = () => {
         makePrivateRequest({ url: '/genres' })
             .then(response => setGenres(response.data))
             .finally(() => setIsLoadingGenres(false));
-
     }, []);
 
     const handleChangeGenre = (genre: Genre) => {
@@ -57,9 +60,13 @@ const CatalogMovies = () => {
                 />
             </div>
             <div className="catalog-movies">
-                {movieResponse?.content.map(movie => (
-                    <Link to={`/movies/${movie.id}`} key={movie.id}><MovieCard movie={movie} /></Link>
-                ))}
+                {isLoading ? <MovieCardLoader /> : (
+                    movieResponse?.content.map(movie => (
+                        <Link to={`/movies/${movie.id}`} key={movie.id}>
+                            <MovieCard movie={movie} />
+                        </Link>
+                    ))
+                )}
             </div>
             {movieResponse &&
                 <Pagination
