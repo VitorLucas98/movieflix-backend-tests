@@ -54,3 +54,6 @@ export const logout = () => {
     localStorage.removeItem('authData');
     history.replace('/');
 }
+export const isMember =() => {
+    return getAccessTokenDecoded().authorities.includes('ROLE_MEMBER');
+}
