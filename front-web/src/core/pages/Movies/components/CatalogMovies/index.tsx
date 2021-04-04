@@ -6,7 +6,8 @@ import { makePrivateRequest } from '../../../../utils/request';
 import MovieCard from '../MovieCard';
 import Select from 'react-select';
 import './styles.css';
-import MovieCardLoader from '../MovieCardLoader';
+import MovieCardLoader from '../Loaders/MovieCardLoader';
+
 
 const CatalogMovies = () => {
     const [movieResponse, setMovieResponse] = useState<MovieResponse>();
@@ -60,7 +61,7 @@ const CatalogMovies = () => {
                 />
             </div>
             <div className="catalog-movies">
-                {isLoading ? <MovieCardLoader /> : (
+                {isLoading ? <MovieCardLoader/> : (
                     movieResponse?.content.map(movie => (
                         <Link to={`/movies/${movie.id}`} key={movie.id}>
                             <MovieCard movie={movie} />
